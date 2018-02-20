@@ -1,0 +1,55 @@
+<h3>Create Setor</h3>
+<div [hidden]="submitted">
+	<form (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label for="nome">Nome</label> <input type="text"
+				class="form-control" id="nome" required [(ngModel)]="setor.nome"
+				name="nome">
+		</div>
+
+		<div class="form-group">
+			<label for="derivacao">Derivação</label> <input type="text"
+				class="form-control" id="derivacao" required [(ngModel)]="setor.derivacao"
+				name="derivacao">
+		</div>
+
+		<div class="form-group">
+			<label for="lateral">Lateral</label> <input type="text"
+				class="form-control" id="lateral" required [(ngModel)]="setor.lateral"
+				name="lateral">
+		</div>
+
+		<div class="form-group">
+			<label for="lados">Lados</label> <input type="text"
+				class="form-control" id="lados" required [(ngModel)]="setor.lados"
+				name="lados">
+		</div>		
+
+		<div class="form-group">
+			<label for="emissor">Emissor</label> <input type="text"
+				class="form-control" id="emissor" required [(ngModel)]="setor.emissor"
+				name="emissor">
+		</div>
+
+		<div class="form-group">
+			<label for="espLinhas">Espaçamento Linhas</label> <input type="text"
+				class="form-control" id="espLinhas" required [(ngModel)]="setor.espLinhas"
+				name="espLinhas">
+		</div>
+
+		<div class="form-group">
+			<label for="espEmissor">Espaçamento Emissores</label> <input type="text"
+				class="form-control" id="espEmissor" required [(ngModel)]="setor.espEmissor"
+				name="espEmissor">
+		</div>
+
+	
+
+		<button type="submit" class="btn btn-success">Submit</button>
+	</form>
+</div>
+
+<div [hidden]="!submitted">
+	<h4>You submitted successfully!</h4>
+	<button class="btn btn-success" (click)="newSetor()">Add</button>
+</div>

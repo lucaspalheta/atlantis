@@ -1,0 +1,63 @@
+[debug] [2018-02-14T16:57:00.919Z] ----------------------------------------------------------------------
+[debug] [2018-02-14T16:57:00.924Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kaleo\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-02-14T16:57:00.924Z] CLI Version:   3.17.4
+[debug] [2018-02-14T16:57:00.924Z] Platform:      win32
+[debug] [2018-02-14T16:57:00.924Z] Node Version:  v8.9.4
+[debug] [2018-02-14T16:57:00.925Z] Time:          Wed Feb 14 2018 14:57:00 GMT-0200 (Horário brasileiro de verão)
+[debug] [2018-02-14T16:57:00.925Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-14T16:57:00.945Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-14T16:57:00.945Z] > authorizing via signed-in user
+[debug] [2018-02-14T16:57:00.948Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-14T16:57:00.948Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/nC3AMTqRu3-n5TAmi9R8ISJRHh7G2T4ZdMVK0TCcbDk',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Feb 14 2018 14:57:00 GMT-0200 (Horário brasileiro de verão)
+[debug] [2018-02-14T16:57:02.228Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-14T16:57:02.290Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/atlantis-ceagi  
+  
+ Wed Feb 14 2018 14:57:02 GMT-0200 (Horário brasileiro de verão)
+[debug] [2018-02-14T16:57:04.113Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-14T16:57:04.115Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/atlantis-ceagi/tokens  
+  
+ Wed Feb 14 2018 14:57:04 GMT-0200 (Horário brasileiro de verão)
+[debug] [2018-02-14T16:57:05.470Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'atlantis-ceagi'...
+[info] 
+[info] i  deploying database, storage, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-02-14T16:57:07.499Z] >>> HTTP REQUEST PUT https://atlantis-ceagi.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Wed Feb 14 2018 14:57:07 GMT-0200 (Horário brasileiro de verão)
+[debug] [2018-02-14T16:57:09.602Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database atlantis-ceagi is valid
+[debug] [2018-02-14T16:57:09.607Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/atlantis-ceagi  
+  
+ Wed Feb 14 2018 14:57:09 GMT-0200 (Horário brasileiro de verão)
+[debug] [2018-02-14T16:57:12.059Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-02-14T16:57:12.067Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/atlantis-ceagi:test  
+ { source: { files: [ [Object] ] } } 
+ Wed Feb 14 2018 14:57:12 GMT-0200 (Horário brasileiro de verão)
+[debug] [2018-02-14T16:57:17.130Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-02-14T16:57:17.143Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/atlantis-ceagi/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Wed Feb 14 2018 14:57:17 GMT-0200 (Horário brasileiro de verão)
+[debug] [2018-02-14T16:57:18.818Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-14T16:57:18.819Z] [rules] created ruleset projects/atlantis-ceagi/rulesets/68ca6a0d-36e8-447b-b753-bb089a44f86f
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2018-02-14T16:57:20.358Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/atlantis-ceagi/uploads/-L5KEvY-OJ0Ffil_qOKW?fileCount=52&message=  
+  
+ Wed Feb 14 2018 14:57:20 GMT-0200 (Horário brasileiro de verão)

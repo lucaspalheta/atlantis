@@ -1,0 +1,25 @@
+<h1>Derivacoes</h1>
+
+<div>
+	<a  routerLink="addDerivacao"  role="button" routerLinkActive="active"><button type="button" class="btn green white-text" >
+		Nova Derivacao</button>
+	</a>
+</div>
+
+<div *ngFor="let derivacao of derivacoes | async" style="width: 300px;">
+	<derivacao-details [derivacao]='derivacao'></derivacao-details>
+</div>
+
+<div>
+	<button type="button" class="btn red white-text" (click)='deleteDerivacoes()'>Apagar Todos</button>
+</div>
+
+
+
+<h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

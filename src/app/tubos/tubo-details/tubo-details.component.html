@@ -1,0 +1,32 @@
+
+<div class="row">
+<table class="col s12 center-align" style="width: 80vw;">
+        <thead>
+          <tr>
+              <th>Nome</th>
+              <th>Estágio Fenológico</th>
+              <th>Coeficiente de Cultivo</th>
+              <th>Diâmetro Radicular</th>
+              <th>Diâmetro de Copa</th>
+              <th>Ciclo</th>
+              <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody *ngIf="tubo">
+          <tr>
+            <td>{{tubo.nome}}</td>
+            <td>{{tubo.estFenologico}}</td>
+            <td>{{tubo.kc}}</td>
+            <td>{{tubo.dRadicular}}</td>
+            <td>{{tubo.dCopa}}</td>
+            <td>{{tubo.ciclo}}</td>
+            <td><span class="btn blue white-text" *ngIf='tubo.active' (click)='updateActive(false)'>Desativar</span>
+	
+	<span class="btn green white-text"*ngIf='!tubo.active' (click)='updateActive(true)'>Ativar</span>
+
+	<span class="btn red white-text" (click)='deleteTubo()'>Apagar</span></td>
+          </tr>
+        </tbody>
+ </table>
+</div>

@@ -1,0 +1,42 @@
+<h1>Culturas</h1>
+
+<div>
+	<a  routerLink="../addCultura"  role="button" routerLinkActive="active"><button type="button" class="btn green white-text" >
+	Nova Cultura</button>
+</a>
+</div>
+<div class="">
+	<table class="center-align">
+		<thead >
+			<tr>
+				<th>Nome</th>
+				<th>Estágio Fenológico</th>
+				<th>Coeficiente de Cultivo</th>
+				<th>Diâmetro Radicular</th>
+				<th>Diâmetro de Copa</th>
+				<th>Ciclo</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+
+		<tbody >
+			 <tr  *ngFor="let cultura of culturas | async" style="width: 100%">
+				<cultura-details [cultura]='cultura'></cultura-details>
+			</tr>
+		</tbody>
+
+
+
+	</table>
+</div>
+<div>
+	<button type="button" class="btn red white-text" (click)='deleteCulturas()'>Apagar Todos</button>
+</div>
+
+<h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lng">
+	<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

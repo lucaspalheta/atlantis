@@ -1,0 +1,42 @@
+<h3>Create Emissor</h3>
+<div [hidden]="submitted">
+	<form (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label for="modelo">Modelo</label> <input type="text"
+				class="form-control" id="modelo" required [(ngModel)]="emissor.modelo"
+				name="modelo">
+		</div>
+
+		<div class="form-group">
+			<label for="bocal">Bocal</label> <input type="text"
+				class="form-control" id="bocal" required [(ngModel)]="emissor.bocal"
+				name="bocal">
+		</div>
+
+		<div class="form-group">
+			<label for="vazao">Vazão</label> <input type="text"
+				class="form-control" id="vazao" required [(ngModel)]="emissor.vazao"
+				name="vazao">
+		</div>
+
+		<div class="form-group">
+			<label for="ps">Pressão de Serviço</label> <input type="text"
+				class="form-control" id="ps" required [(ngModel)]="emissor.ps"
+				name="ps">
+		</div>
+
+		<div class="form-group">
+			<label for="ra">Raio de Alcance</label> <input type="text"
+				class="form-control" id="ra" required [(ngModel)]="emissor.ra"
+				name="ra">
+		</div>
+
+		
+		<button type="submit" class="btn btn-success">Submit</button>
+	</form>
+</div>
+
+<div [hidden]="!submitted">
+	<h4>You submitted successfully!</h4>
+	<button class="btn btn-success" (click)="newEmissor()">Add</button>
+</div>

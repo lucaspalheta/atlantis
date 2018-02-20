@@ -1,0 +1,42 @@
+<h1>Princi_ramificacoes</h1>
+
+<div>
+	<a  routerLink="../addPrinci_ramificacao"  role="button" routerLinkActive="active"><button type="button" class="btn green white-text" >
+	Nova Princi_ramificacao</button>
+</a>
+</div>
+<div class="container">
+	<table class="center-align">
+		<thead >
+			<tr>
+				<th>Nome</th>
+				<th>Estágio Fenológico</th>
+				<th>Coeficiente de Cultivo</th>
+				<th>Diâmetro Radicular</th>
+				<th>Diâmetro de Copa</th>
+				<th>Ciclo</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+
+		<tbody *ngFor="let princi_ramificacao of princi_ramificacoes | async" >
+			 <tr>
+				<princi_ramificacao-details [princi_ramificacao]='princi_ramificacao'></princi_ramificacao-details>
+			</tr>
+		</tbody>
+
+
+
+	</table>
+</div>
+<div>
+	<button type="button" class="btn red white-text" (click)='deletePrinci_ramificacoes()'>Apagar Todos</button>
+</div>
+
+<h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lng">
+	<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

@@ -1,0 +1,19 @@
+
+
+
+
+
+
+	<td>{{cultura.nome}}</td>
+	<td>{{cultura.estFenologico}}</td>
+	<td>{{cultura.kc}}</td>
+	<td>{{cultura.dRadicular}}</td>
+	<td>{{cultura.dCopa}}</td>
+	<td>{{cultura.ciclo}}</td>
+	<td><span class="btn blue white-text" *ngIf='cultura.active' (click)='updateActive(false)'>Desativar</span>
+
+		<span class="btn green white-text"*ngIf='!cultura.active' (click)='updateActive(true)'>Ativar</span>
+
+		<span class="btn red white-text" (click)='deleteCultura()'>Apagar</span></td>
+
+

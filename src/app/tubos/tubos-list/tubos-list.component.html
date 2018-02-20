@@ -1,0 +1,25 @@
+<h1>Tubos</h1>
+
+<div>
+	<a  routerLink="addTubo"  role="button" routerLinkActive="active"><button type="button" class="btn green white-text" >
+		Nova Tubo</button>
+	</a>
+</div>
+
+<div *ngFor="let tubo of tubos | async" style="width: 300px;">
+	<tubo-details [tubo]='tubo'></tubo-details>
+</div>
+
+<div>
+	<button type="button" class="btn red white-text" (click)='deleteTubos()'>Apagar Todos</button>
+</div>
+
+
+
+<h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

@@ -1,0 +1,19 @@
+.total{
+	width: 98vw;
+	height: 97vh;
+
+	
+}
+
+.margem-formulario{
+	margin-top: 30vh;
+}
+
+.formul {
+	box-shadow: 1px, 1px, 10px rgba(0,0,0,0.5);
+}
+
+
+.side-nav li > a {
+	color: grey;
+}

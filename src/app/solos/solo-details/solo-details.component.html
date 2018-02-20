@@ -1,0 +1,33 @@
+
+<div class="row">
+<table class="col s12 center-align" style="width: 80vw;">
+        <thead>
+          <tr>
+              <th>Nome</th>
+              <th>Estágio Fenológico</th>
+              <th>Coeficiente de Cultivo</th>
+              <th>Diâmetro Radicular</th>
+              <th>Diâmetro de Copa</th>
+              <th>Ciclo</th>
+              <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody *ngIf="solo">
+          <tr>
+            <td>{{solo.nome}}</td>
+            <td>{{solo.estFenologico}}</td>
+            <td>{{solo.kc}}</td>
+            <td>{{solo.dRadicular}}</td>
+            <td>{{solo.dCopa}}</td>
+            <td>{{solo.ciclo}}</td>
+            <td><span class="btn blue white-text" *ngIf='solo.active' (click)='updateActive(false)'>Desativar</span>
+	
+	<span class="btn green white-text"*ngIf='!solo.active' (click)='updateActive(true)'>Ativar</span>
+
+	<span class="btn red white-text" (click)='deleteSolo()'>Apagar</span></td>
+          </tr>
+        </tbody>
+ </table>
+</div>
+

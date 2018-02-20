@@ -1,0 +1,19 @@
+
+
+
+
+
+
+        <td>{{princi_ramificacao.nome}}</td>
+        <td>{{princi_ramificacao.estFenologico}}</td>
+        <td>{{princi_ramificacao.kc}}</td>
+        <td>{{princi_ramificacao.dRadicular}}</td>
+        <td>{{princi_ramificacao.dCopa}}</td>
+        <td>{{princi_ramificacao.ciclo}}</td>
+        <td><span class="btn blue white-text" *ngIf='princi_ramificacao.active' (click)='updateActive(false)'>Desativar</span>
+
+         <span class="btn green white-text"*ngIf='!princi_ramificacao.active' (click)='updateActive(true)'>Ativar</span>
+
+         <span class="btn red white-text" (click)='deletePrinci_ramificacao()'>Apagar</span></td>
+      
+

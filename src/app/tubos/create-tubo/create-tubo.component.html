@@ -1,0 +1,47 @@
+<h3>Create Tubo</h3>
+<div [hidden]="submitted">
+	<form (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label for="nome">Modelo</label> <input type="text"
+				class="form-control" id="nome" required [(ngModel)]="tubo.nome"
+				name="nome">
+		</div>
+
+		<div class="form-group">
+			<label for="estFenologico">Estágio Fenológico</label> <input type="text"
+				class="form-control" id="estFenologico" required [(ngModel)]="tubo.estFenologico"
+				name="estFenologico">
+		</div>
+
+		<div class="form-group">
+			<label for="kc">Coeficiente de Cultivo</label> <input type="text"
+				class="form-control" id="kc" required [(ngModel)]="tubo.kc"
+				name="kc">
+		</div>
+
+		<div class="form-group">
+			<label for="dRadicular">Diâmetro Radicular</label> <input type="text"
+				class="form-control" id="dRadicular" required [(ngModel)]="tubo.dRadicular"
+				name="dRadicular">
+		</div>
+
+		<div class="form-group">
+			<label for="dCopa">Diâmatro de Copa</label> <input type="text"
+				class="form-control" id="dCopa" required [(ngModel)]="tubo.dCopa"
+				name="dCopa">
+		</div>
+
+		<div class="form-group">
+			<label for="ciclo">Ciclo</label> <input type="text"
+				class="form-control" id="ciclo" required [(ngModel)]="tubo.ciclo"
+				name="ciclo">
+		</div>
+
+		<button type="submit" class="btn btn-success">Submit</button>
+	</form>
+</div>
+
+<div [hidden]="!submitted">
+	<h4>You submitted successfully!</h4>
+	<button class="btn btn-success" (click)="newTubo()">Add</button>
+</div>

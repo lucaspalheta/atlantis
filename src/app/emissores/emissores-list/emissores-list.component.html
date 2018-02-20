@@ -1,0 +1,25 @@
+<h1>Emissores</h1>
+
+<div>
+	<a  routerLink="addEmissor"  role="button" routerLinkActive="active"><button type="button" class="btn green white-text" >
+		Nova Emissor</button>
+	</a>
+</div>
+
+<div *ngFor="let emissor of emissores | async" style="width: 300px;">
+	<emissor-details [emissor]='emissor'></emissor-details>
+</div>
+
+<div>
+	<button type="button" class="btn red white-text" (click)='deleteEmissores()'>Apagar Todos</button>
+</div>
+
+
+
+<h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

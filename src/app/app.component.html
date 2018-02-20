@@ -1,0 +1,71 @@
+<!--===========Quando Logado ======================-->
+
+<div *ngIf="authService.user | async">
+
+  <div class="navbar-fixed ">
+    <nav>
+      <div class="nav-wrapper grey black-text">
+        <a href="#!" class="brand-logo">Atlantis</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html">Começar Rápido</a></li>
+          <li><a (click)="logout()">Sair</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <header class=" lados">
+   <ul id="slide-out" class="side-nav grey lighten-4 fixed">
+    <li><a routerLink="customers"  role="button" routerLinkActive="active">Inicial</a></li>
+    <ul>
+      <li><a routerLink="culturas"  role="button" routerLinkActive="active">Listar Culturas</a></li>
+      <li><a routerLink="addCultura"  role="button" routerLinkActive="active">Adicionar Cultura</a></li>
+    </ul>
+  </ul>
+  <!--<a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>-->
+</header>
+
+<main>
+
+
+
+  <!--<nav>
+    
+    <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
+  </nav>-->
+  <router-outlet></router-outlet>
+
+
+</main>
+
+
+</div>
+
+
+
+<!--===========Quando Deslogado ======================-->
+
+<div *ngIf="!(authService.user | async)">
+  <div class="row total">
+    <div class=" col m4 "></div>
+    <div class="col m4 valign-wrapper margem-formulario">
+      <div class="container ">
+        <h5 class="blue-text">Atlantis</h5>
+        <p class="grey-text">Entre ou Cadastre-se para aproveitar.</p>
+        <input type="text" [(ngModel)]="email" placeholder="Email">
+        <input type="password" [(ngModel)]="password" placeholder="Senha">
+
+        <button class="btn green white-text" (click)="login()" [disabled]="!email || !password">
+          Entrar
+        </button>
+
+        <button class="btn blue white-text" (click)="signup()" [disabled]="!email || !password">
+          Cadastrar
+        </button>
+        
+
+
+      </div>
+    </div>
+  </div>
+</div>
